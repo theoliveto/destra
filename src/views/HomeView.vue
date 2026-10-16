@@ -1,16 +1,18 @@
 <script lang="ts">
+  import { defineAsyncComponent } from 'vue'
+
   export default {
     name: 'HomeView',
     components: {
-      HeaderComponent: () => import('@/components/HeaderComponent.vue'),
-      HeroComponent: () => import('@/components/contents/HeroComponent.vue'),
-      StatementComponent: () => import('@/components/contents/StatementComponent.vue'),
-      MarqueeComponent: () => import('@/components/contents/MarqueeComponent.vue'),
-      PortfolioComponent: () => import('@/components/contents/PortfolioComponent.vue'),
-      ServicesComponent: () => import('@/components/contents/ServicesComponent.vue'),
-      ProcessComponent: () => import('@/components/contents/ProcessComponent.vue'),
-      ContactComponent: () => import('@/components/contents/ContactComponent.vue'),
-      FooterComponent: () => import('@/components/FooterComponent.vue'),
+      HeaderComponent: defineAsyncComponent(() => import('@/components/HeaderComponent.vue')),
+      HeroComponent: defineAsyncComponent(() => import('@/components/contents/HeroComponent.vue')),
+      StatementComponent: defineAsyncComponent(() => import('@/components/contents/StatementComponent.vue')),
+      MarqueeComponent: defineAsyncComponent(() => import('@/components/contents/MarqueeComponent.vue')),
+      PortfolioComponent: defineAsyncComponent(() => import('@/components/contents/PortfolioComponent.vue')),
+      ServicesComponent: defineAsyncComponent(() => import('@/components/contents/ServicesComponent.vue')),
+      ProcessComponent: defineAsyncComponent(() => import('@/components/contents/ProcessComponent.vue')),
+      ContactComponent: defineAsyncComponent(() => import('@/components/contents/ContactComponent.vue')),
+      FooterComponent: defineAsyncComponent(() => import('@/components/FooterComponent.vue')),
     },
   }
 </script>

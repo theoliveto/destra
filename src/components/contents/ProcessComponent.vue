@@ -8,7 +8,7 @@
     <section class="process" id="processo" aria-labelledby="process-title">
         <div class="container process-grid">
             <div class="process-intro reveal">
-                <div class="section-tag"><span>04</span> como fazemos</div>
+                <div class="section-tag"><span>|</span> como fazemos</div>
                 <h2 id="process-title">menos achismo.<br /><span>mais direção.</span></h2>
                 <p>Um processo próximo, provocador e feito para encontrar o que torna seu negócio impossível de ignorar.</p>
             </div>

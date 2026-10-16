@@ -7,7 +7,7 @@
 <template>
     <section class="statement" id="posicionamento" aria-labelledby="statement-title">
         <div class="container statement-grid">
-            <div class="section-tag reveal"><span>01</span> posicionamento</div>
+            <div class="section-tag reveal"><span>|</span> posicionamento</div>
             <div class="statement-content reveal reveal-delay">
                 <h2 id="statement-title">pequenas empresas também podem deixar uma <span>grande marca.</span></h2>
                 <div class="statement-bottom">

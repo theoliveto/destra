@@ -9,7 +9,7 @@
         <div class="hero-grid-pattern" aria-hidden="true"></div>
         <div class="container hero-inner">
             <div class="hero-copy reveal">
-                <p class="eyebrow"><span class="eyebrow-dot"></span> agência boutique de marketing</p>
+                <p class="eyebrow"><span class="eyebrow-dot"></span> agência de marketing</p>
                 <h1 id="hero-title">marcas com<br /><em>direção.</em></h1>
                 <p class="hero-lede">Marketing não é sorte. É estratégia. E estratégia se constrói com direção.</p>
                 <div class="hero-actions">
@@ -27,7 +27,7 @@
                     <path d="m265 190 150-78-42 78 42 78Z" fill="none" stroke="currentColor" stroke-width="3" />
                 </svg>
                 <span class="hero-art-caption">criatividade<br />com intenção</span>
-                <span class="hero-art-index">01<span>/04</span></span>
+                
             </div>
         </div>
         <div class="hero-footline container">
