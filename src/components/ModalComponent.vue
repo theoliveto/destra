@@ -1,7 +1,7 @@
 <script setup lang="ts">
     import { reactive, ref, watch, onBeforeUnmount } from 'vue'
 
-    const FORMSPREE_ID = 'xrpbbjrb'
+    const FORMSPREE_ID = 'mqpewool'
     const FORMSPREE_URL = `https://formspree.io/f/${FORMSPREE_ID}`
 
     interface BriefingForm {
