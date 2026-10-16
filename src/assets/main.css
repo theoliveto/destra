@@ -7,8 +7,8 @@
 .scroll-progress { position: fixed; z-index: 30; top: 0; left: 0; width: 100%; height: 3px; pointer-events: none; }
 .scroll-progress span { display: block; width: 0; height: 100%; background: var(--yellow); }
 
-.site-header { position: absolute; z-index: 20; top: 0; width: 100%; border-bottom: 1px solid transparent; transition: background .3s, border-color .3s, backdrop-filter .3s; }
-.site-header.is-scrolled { position: fixed; background: rgba(15, 15, 15, .87); border-color: var(--line); backdrop-filter: blur(14px); }
+.site-header { position: fixed; z-index: 20; top: 0; width: 100%; border-bottom: 1px solid transparent; transition: background .3s, border-color .3s, backdrop-filter .3s; }
+.site-header.is-scrolled { background: rgba(15, 15, 15, .87); border-color: var(--line); backdrop-filter: blur(14px); }
 .header-inner { min-height: 90px; display: flex; align-items: center; justify-content: space-between; }
 .brand { display: inline-flex; align-items: center; gap: 10px; font-family: var(--display); font-size: 31px; font-weight: 800; letter-spacing: -2.2px; line-height: 1; }
 .brand-word { display: inline-block; transform: translateY(-1px); }
@@ -148,16 +148,16 @@
 .button-dark:hover { background: var(--white); color: var(--ink); }
 .contact-shape { position: absolute; right: -30px; bottom: -25px; width: min(40vw, 500px); color: rgba(15,15,15,.3); transform: rotate(-16deg); }
 .contact-shape svg { display: block; width: 100%; }
-.modal { position: fixed; z-index: 50; inset: 0; display: grid; place-items: center; padding: 25px; opacity: 0; pointer-events: none; transition: opacity .3s; }
-.modal.is-open { opacity: 1; pointer-events: auto; }
+
+.modal { position: fixed; z-index: 50; inset: 0; display: grid; place-items: center; padding: 25px; transition: opacity .3s; }
 .modal-backdrop { position: absolute; inset: 0; background: rgba(15,15,15,.82); backdrop-filter: blur(8px); }
 .modal-panel { position: relative; z-index: 1; width: min(100%, 740px); max-height: calc(100vh - 50px); overflow: auto; padding: 48px clamp(24px, 5vw, 65px) 55px; background: var(--paper); color: var(--ink); box-shadow: 0 20px 70px rgba(0,0,0,.45); transform: translateY(18px); transition: transform .35s var(--ease); }
-.modal.is-open .modal-panel { transform: translateY(0); }
 .modal-close { position: absolute; top: 18px; right: 22px; width: 38px; height: 38px; border: 1px solid var(--line-dark); border-radius: 50%; background: transparent; color: var(--ink); font-size: 27px; line-height: 1; cursor: pointer; }
 .modal-close:hover { background: var(--yellow); }
 .modal-panel h2 { margin: 32px 0 17px; font-family: var(--display); font-size: clamp(3.1rem, 7vw, 5.8rem); letter-spacing: -.09em; line-height: .88; }
 .modal-panel h2 span { color: var(--yellow); -webkit-text-stroke: 1px var(--ink); }
 .modal-lede { max-width: 420px; margin: 0 0 28px; color: #67625b; font-size: 12px; line-height: 1.75; }
+
 .contact-form { display: grid; grid-template-columns: 1fr 1fr; gap: 17px 22px; }
 .contact-form label { display: grid; gap: 7px; color: #777169; font-size: 9px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
 .contact-form input, .contact-form textarea { width: 100%; resize: vertical; border: 0; border-bottom: 1px solid rgba(15,15,15,.3); outline: 0; padding: 9px 0; background: transparent; color: var(--ink); font: 13px/1.5 var(--body); }

@@ -9,7 +9,6 @@
                 <a class="brand brand-footer" href="#topo" aria-label="Destra — voltar ao topo">
                     <img src="/brand.png" alt="Destra" width="150" />
                 </a>
-                <p class="footer-tagline">estratégia que constrói presença.</p>
             </div>
             <div class="footer-meta">
                 <span>© {{ anoAtual}} Destra</span>

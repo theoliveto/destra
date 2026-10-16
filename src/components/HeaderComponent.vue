@@ -1,11 +1,14 @@
-<script lang="ts">
-    export default {
-        name: 'HeaderComponent',
-    };
-</script>
+<script setup lang="ts">
+    import { useScrollState } from '@/composables/useScrollState'
 
+    const { isScrolled, progress } = useScrollState()
+</script>
 <template>
-    <header class="site-header" data-header>
+    <div class="scroll-progress" aria-hidden="true">
+        <span :style="{ width: progress + '%' }"></span>
+    </div>
+
+    <header class="site-header" :class="{ 'is-scrolled': isScrolled }">
         <div class="container header-inner">
             <a class="brand" href="#topo" aria-label="Destra — voltar ao topo">
                 <img src="/brand.png" alt="Destra" width="150" />

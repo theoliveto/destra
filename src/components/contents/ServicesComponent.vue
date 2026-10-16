@@ -1,7 +1,27 @@
-<script lang="ts">
-    export default {
-        name: 'ServicesComponent',
-    };
+<script setup lang="ts">
+    import { ref } from 'vue'
+
+    interface Servico {
+        linha1: string
+        linha2: string
+        descricao: string
+    }
+
+    const servicos: Servico[] = [
+        { linha1: 'posicionamento', linha2: 'de marca', descricao: 'Definimos o território que sua marca ocupa, a história que ela conta e o lugar que deseja conquistar.' },
+        { linha1: 'direção', linha2: 'criativa', descricao: 'Conectamos conceito, estética e intenção para que cada escolha criativa tenha um porquê.' },
+        { linha1: 'produção', linha2: 'audiovisual', descricao: 'Do roteiro à captação, criamos filmes, reels e peças que carregam a marca para além do feed.' },
+        { linha1: 'identidade', linha2: 'verbal & visual', descricao: 'Traduzimos estratégia em personalidade, linguagem e sistemas visuais que fazem sua marca ser reconhecida.' },
+        { linha1: 'conteúdo', linha2: 'com intenção', descricao: 'Planejamos narrativas e formatos para transformar atenção em relacionamento, e relacionamento em negócio.' },
+        { linha1: 'edição &', linha2: 'finalização', descricao: 'Lapidamos ritmo, som e imagem para que o corte final seja tão estratégico quanto o primeiro frame.' },
+        { linha1: 'presença', linha2: 'digital', descricao: 'Colocamos a estratégia na rua com consistência, clareza e presença nos pontos de contato que importam.' },
+    ]
+
+    const abertoIndex = ref<number | null>(0)
+
+    function alternar(index: number) {
+        abertoIndex.value = abertoIndex.value === index ? null : index
+    }
 </script>
 
 <template>
@@ -14,47 +34,28 @@
             </div>
 
             <div class="services-list services-accordion">
-                <article class="service-row service-accordion is-open reveal" data-accordion>
-                    <button class="service-trigger" type="button" aria-expanded="true" aria-controls="service-detail-01">
-                        <i class="fa-solid fa-caret-right color-topic"></i><span class="service-name"><strong>posicionamento<br /><em>de marca</em></strong></span><span class="service-arrow" aria-hidden="true">↗</span>
+                <article
+                    v-for="(servico, i) in servicos"
+                    :key="servico.linha1"
+                    class="service-row service-accordion reveal"
+                    :class="{ 'is-open': abertoIndex === i }"
+                >
+                    <button
+                        class="service-trigger"
+                        type="button"
+                        :aria-expanded="abertoIndex === i"
+                        :aria-controls="`service-detail-${i + 1}`"
+                        @click="alternar(i)"
+                    >
+                        <i class="fa-solid fa-caret-right color-topic"></i>
+                        <span class="service-name">
+                            <strong>{{ servico.linha1 }}<br /><em>{{ servico.linha2 }}</em></strong>
+                        </span>
+                        <span class="service-arrow" aria-hidden="true">↗</span>
                     </button>
-                    <div class="service-detail" id="service-detail-01"><p>Definimos o território que sua marca ocupa, a história que ela conta e o lugar que deseja conquistar.</p></div>
-                </article>
-                <article class="service-row service-accordion reveal" data-accordion>
-                    <button class="service-trigger" type="button" aria-expanded="false" aria-controls="service-detail-02">
-                        <i class="fa-solid fa-caret-right color-topic"></i><span class="service-name"><strong>direção<br /><em>criativa</em></strong></span><span class="service-arrow" aria-hidden="true">↗</span>
-                    </button>
-                    <div class="service-detail" id="service-detail-02"><p>Conectamos conceito, estética e intenção para que cada escolha criativa tenha um porquê.</p></div>
-                </article>
-                <article class="service-row service-accordion reveal" data-accordion>
-                    <button class="service-trigger" type="button" aria-expanded="false" aria-controls="service-detail-03">
-                        <i class="fa-solid fa-caret-right color-topic"></i><span class="service-name"><strong>produção<br /><em>audiovisual</em></strong></span><span class="service-arrow" aria-hidden="true">↗</span>
-                    </button>
-                    <div class="service-detail" id="service-detail-03"><p>Do roteiro à captação, criamos filmes, reels e peças que carregam a marca para além do feed.</p></div>
-                </article>
-                <article class="service-row service-accordion reveal" data-accordion>
-                    <button class="service-trigger" type="button" aria-expanded="false" aria-controls="service-detail-04">
-                        <i class="fa-solid fa-caret-right color-topic"></i><span class="service-name"><strong>identidade<br /><em>verbal & visual</em></strong></span><span class="service-arrow" aria-hidden="true">↗</span>
-                    </button>
-                    <div class="service-detail" id="service-detail-04"><p>Traduzimos estratégia em personalidade, linguagem e sistemas visuais que fazem sua marca ser reconhecida.</p></div>
-                </article>
-                <article class="service-row service-accordion reveal" data-accordion>
-                    <button class="service-trigger" type="button" aria-expanded="false" aria-controls="service-detail-05">
-                        <i class="fa-solid fa-caret-right color-topic"></i><span class="service-name"><strong>conteúdo<br /><em>com intenção</em></strong></span><span class="service-arrow" aria-hidden="true">↗</span>
-                    </button>
-                    <div class="service-detail" id="service-detail-05"><p>Planejamos narrativas e formatos para transformar atenção em relacionamento, e relacionamento em negócio.</p></div>
-                </article>
-                <article class="service-row service-accordion reveal" data-accordion>
-                    <button class="service-trigger" type="button" aria-expanded="false" aria-controls="service-detail-06">
-                        <i class="fa-solid fa-caret-right color-topic"></i><span class="service-name"><strong>edição &<br /><em>finalização</em></strong></span><span class="service-arrow" aria-hidden="true">↗</span>
-                    </button>
-                    <div class="service-detail" id="service-detail-06"><p>Lapidamos ritmo, som e imagem para que o corte final seja tão estratégico quanto o primeiro frame.</p></div>
-                </article>
-                <article class="service-row service-accordion reveal" data-accordion>
-                    <button class="service-trigger" type="button" aria-expanded="false" aria-controls="service-detail-07">
-                        <i class="fa-solid fa-caret-right color-topic"></i><span class="service-name"><strong>presença<br /><em>digital</em></strong></span><span class="service-arrow" aria-hidden="true">↗</span>
-                    </button>
-                    <div class="service-detail" id="service-detail-07"><p>Colocamos a estratégia na rua com consistência, clareza e presença nos pontos de contato que importam.</p></div>
+                    <div class="service-detail" :id="`service-detail-${i + 1}`">
+                        <p>{{ servico.descricao }}</p>
+                    </div>
                 </article>
             </div>
         </div>
