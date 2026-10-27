@@ -27,7 +27,7 @@
 <template>
     <section class="services section-dark" id="servicos" aria-labelledby="services-title">
         <div class="container">
-            <div class="section-heading reveal">
+            <div class="section-heading reveal" v-reveal>
                 <div class="section-tag color-subtitle"><span>|</span> o que fazemos</div>
                 <h2 id="services-title">estratégia que<br /><span>vira movimento.</span></h2>
                 <p>Do primeiro roteiro ao corte final, abrimos cada frente de trabalho só quando ela faz sentido para a direção da sua marca.</p>
@@ -37,7 +37,7 @@
                 <article
                     v-for="(servico, i) in servicos"
                     :key="servico.linha1"
-                    class="service-row service-accordion reveal"
+                    class="service-row service-accordion reveal" v-reveal
                     :class="{ 'is-open': abertoIndex === i }"
                 >
                     <button

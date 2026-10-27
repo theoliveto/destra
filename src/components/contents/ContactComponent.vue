@@ -16,13 +16,13 @@
             <img src="/logo-white.png" alt="Contact Shape">
         </div>
         <div class="container contact-inner">
-            <div class="section-tag section-tag-dark reveal"><span>|</span> próximo passo</div>
-            <h2 id="contact-title" class="reveal mb">
+            <div class="section-tag section-tag-dark reveal" v-reveal><span>|</span> próximo passo</div>
+            <h2 id="contact-title" class="reveal mb" v-reveal>
                 sua marca já tem potencial.<br /><span>vamos dar direção?</span>
             </h2>
-            <p class="contact-copy reveal">Conte um pouco sobre o momento do seu negócio. A primeira conversa é onde a estratégia começa.</p>
+            <p class="contact-copy reveal" v-reveal>Conte um pouco sobre o momento do seu negócio. A primeira conversa é onde a estratégia começa.</p>
             
-            <div class="contact-actions reveal">
+            <div class="contact-actions reveal" v-reveal>
                 <button class="button button-dark" type="button" @click="modalAberto = true">
                     enviar briefing por e-mail <span aria-hidden="true">↗</span>
                 </button>
