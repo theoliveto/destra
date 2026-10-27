@@ -1,8 +1,20 @@
 <script setup lang="ts">
+    import { ref } from 'vue'
     import { useScrollState } from '@/composables/useScrollState'
 
     const { isScrolled, progress } = useScrollState()
+
+    const isMenuOpen = ref(false)
+
+    const toggleMenu = () => {
+        isMenuOpen.value = !isMenuOpen.value
+    }
+
+    const closeMenu = () => {
+        isMenuOpen.value = false
+    }
 </script>
+
 <template>
     <div class="scroll-progress" aria-hidden="true">
         <span :style="{ width: progress + '%' }"></span>
@@ -10,21 +22,40 @@
 
     <header class="site-header" :class="{ 'is-scrolled': isScrolled }">
         <div class="container header-inner">
-            <a class="brand" href="#topo" aria-label="Destra — voltar ao topo">
+            <a 
+                class="brand" 
+                href="#topo" 
+                aria-label="Destra — voltar ao topo"
+                @click="closeMenu"
+            >
                 <img src="/brand.png" alt="Destra" width="150" />
             </a>
 
-            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-toggle>
-                <span></span><span></span>
-                <span class="sr-only">Abrir menu</span>
+            <button 
+                class="menu-toggle" 
+                type="button" 
+                :aria-expanded="isMenuOpen" 
+                aria-controls="site-nav" 
+                :aria-label="isMenuOpen ? 'Fechar menu' : 'Abrir menu'"
+                @click="toggleMenu"
+            >
+                <span></span>
+                <span></span>
             </button>
 
-            <nav class="site-nav" id="site-nav" aria-label="Navegação principal" data-nav>
-                <a href="#posicionamento">Posicionamento</a>
-                <a href="#portfolio">Portfólio</a>
-                <a href="#servicos">Serviços</a>
-                <a href="#processo">Processo</a>
-                <a class="nav-cta" href="#contato">falar com a destra <span aria-hidden="true">↗</span></a>
+            <nav 
+                id="site-nav" 
+                class="site-nav" 
+                :class="{ 'is-open': isMenuOpen }"
+                aria-label="Navegação principal"
+            >
+                <a href="#posicionamento" @click="closeMenu">Posicionamento</a>
+                <a href="#portfolio" @click="closeMenu">Portfólio</a>
+                <a href="#servicos" @click="closeMenu">Serviços</a>
+                <a href="#processo" @click="closeMenu">Processo</a>
+                <a class="nav-cta" href="#contato" @click="closeMenu">
+                    falar com a destra <span aria-hidden="true">↗</span>
+                </a>
             </nav>
         </div>
     </header>

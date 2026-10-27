@@ -28,19 +28,10 @@
                 </svg>
             </div>
         </div>
-        <div class="hero-footline container">
-            <span>estratégia que constrói presença</span>
-            <span class="line"></span>
-            <span><span aria-hidden="true"></span></span>
-        </div>
     </section>
 </template>
 
 <style scoped>
-    .title {
-        font-size: 120px;
-    }
-
     .mt {
         margin-top: 50px;
         font-size: 15px;

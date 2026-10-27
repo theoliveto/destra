@@ -9,7 +9,7 @@
   --muted: #aaa6a0;
   --line: rgba(255, 255, 255, 0.2);
   --line-dark: rgba(15, 15, 15, 0.22);
-  --display: 'Arial Rounded MT Bold', 'Sora', sans-serif;
+  --display: 'Sora', sans-serif;
   --body: 'Sora', system-ui, sans-serif;
   --container: min(1180px, calc(100% - 80px));
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
