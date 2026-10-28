@@ -121,9 +121,28 @@
 .service-trigger .service-name em { color: var(--yellow); font-style: normal; }
 .service-trigger .service-arrow { justify-self: end; transition: transform .35s var(--ease), color .25s; }
 .service-accordion.is-open .service-trigger .service-arrow { transform: rotate(45deg); }
-.service-detail { display: grid; grid-template-rows: 0fr; padding-left: 7%; transition: grid-template-rows .4s var(--ease), padding-bottom .4s var(--ease); }
-.service-detail p { overflow: hidden; max-width: 520px; margin: 0; color: var(--muted); font-size: 12px; line-height: 1.8; }
-.service-accordion.is-open .service-detail { grid-template-rows: 1fr; padding-bottom: 28px; }
+
+.service-detail {
+  display: grid;
+  grid-template-rows: 0fr;
+  padding-left: 7%;
+  opacity: 0;
+  transition:
+    grid-template-rows .4s var(--ease),
+    padding-bottom .4s var(--ease),
+    opacity .3s ease;
+}
+
+.service-detail > p {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.service-accordion.is-open .service-detail {
+  grid-template-rows: 1fr;
+  padding-bottom: 28px;
+  opacity: 1;
+}
 
 .process { padding: 145px 0 160px; background: var(--paper); color: var(--ink); }
 .process-grid { display: grid; grid-template-columns: .75fr 1.25fr; gap: 100px; }
