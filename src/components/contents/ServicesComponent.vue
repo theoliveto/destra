@@ -37,7 +37,7 @@
                 <article
                     v-for="(servico, i) in servicos"
                     :key="servico.linha1"
-                    class="service-row service-accordion reveal" v-reveal
+                    class="service-row service-accordion"
                     :class="{ 'is-open': abertoIndex === i }"
                 >
                     <button
